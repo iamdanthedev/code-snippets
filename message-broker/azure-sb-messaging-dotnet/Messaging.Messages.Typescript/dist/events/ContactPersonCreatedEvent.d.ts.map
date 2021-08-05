@@ -1,0 +1,1 @@
+{"version":3,"file":"ContactPersonCreatedEvent.d.ts","sourceRoot":"","sources":["../../src/events/ContactPersonCreatedEvent.ts"],"names":[],"mappings":"AAAA;;;GAGG;AAEH,qBAAa,yBAAyB;IACpC,eAAe,EAAE,MAAM,CAAC;IACxB,MAAM,EAAE,MAAM,CAAC;CAChB"}

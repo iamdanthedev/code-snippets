@@ -1,0 +1,1 @@
+{"version":3,"file":"BookingCostsModifiedEvent.d.ts","sourceRoot":"","sources":["../../src/events/BookingCostsModifiedEvent.ts"],"names":[],"mappings":"AAAA;;;GAGG;AAEH,qBAAa,yBAAyB;IACpC,SAAS,EAAE,MAAM,CAAC;IAClB,aAAa,EAAE,MAAM,CAAC;IACtB,YAAY,EAAE,MAAM,CAAC;IACrB,cAAc,EAAE,MAAM,CAAC;IACvB,iBAAiB,EAAE,OAAO,CAAC;IAC3B,mBAAmB,EAAE,MAAM,CAAC;CAC7B"}

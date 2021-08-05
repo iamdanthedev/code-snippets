@@ -1,0 +1,44 @@
+# ASP.NET
+# Build and test ASP.NET projects.
+# Add steps that publish symbols, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/apps/aspnet/build-aspnet-4
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+jobs:
+  - job: Build
+    steps:
+      - task: NuGetToolInstaller@1
+
+      - task: UseDotNet@2
+        inputs:
+          version: '5.0.x'
+          packageType: runtime
+
+      - task: DotNetCoreCLI@2
+        displayName: 'restore'
+        inputs:
+          command: 'restore'
+          
+      - script: cd Messaging.Messages.Typescript && dotnet tool restore && cd ..
+
+      - task: DotNetCoreCLI@2
+        displayName: 'build solution'
+        inputs:
+          command: 'build'
+
+      - task: Bash@3
+        inputs:
+          filePath: './publish.sh'
+        env:
+          NPM_TOKEN: '$(NpmToken)'
+          NUGET_API_KEY: '$(NugetApiKey)'

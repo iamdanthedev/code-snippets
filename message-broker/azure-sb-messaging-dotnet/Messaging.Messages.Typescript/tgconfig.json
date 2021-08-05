@@ -1,0 +1,28 @@
+{
+  "assemblies": ["../Messaging.Messages/bin/Debug/net5.0/Messaging.Messages.dll", "../Messaging/bin/Debug/net5.0/Messaging.dll"],
+  "outputPath": "./src/events",
+  "clearOutputDirectory": true,
+  "csNullableTranslation": "null",
+  "fileNameConverters": [],
+//  "typeNameConverters": ["PascalCaseToCamelCaseConverter"],
+  "propertyNameConverters": ["PascalCaseToCamelCaseConverter"],
+  "enumValueNameConverters": ["UnderscoreCaseToPascalCase"],
+  "enumStringInitializers": true,
+  "typeScriptFileExtension": "ts",
+  "tabLength": 2,
+  "explicitPublicAccessor": false,
+  "defaultValuesForTypes": {
+//    "number": "-1",
+//    "Date | null": "null"
+//    "string": "\"\""
+  },
+  "customTypeMappings": {
+    "System.DateTime": "string",
+    "System.Object": "any"
+  },
+  "typeUnionsForTypes": {
+    "string|null": ["null"],
+    "string | null": ["null", "undefined"],
+    "Date": ["string"]
+  }
+}

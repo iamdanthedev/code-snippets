@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <RootNamespace>Bonliva.Messaging.Messages</RootNamespace>
+        <TargetFramework>net5.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+        <PackageId>Bonliva.Messaging.Messages</PackageId>
+        <Authors>Bonliva AB</Authors>
+        <Copyright>Bonliva AB</Copyright>
+        <PackageProjectUrl>https://bonliva.se</PackageProjectUrl>
+        <LangVersion>9</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Messaging\Messaging.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="TypeGen" Version="2.4.9" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,1 @@
+{"version":3,"file":"TimereportSentToHbaEvent.d.ts","sourceRoot":"","sources":["../../src/events/TimereportSentToHbaEvent.ts"],"names":[],"mappings":"AAAA;;;GAGG;AAEH,qBAAa,wBAAwB;IACnC,YAAY,EAAE,MAAM,CAAC;IACrB,MAAM,EAAE,MAAM,CAAC;IACf,QAAQ,EAAE,MAAM,CAAC;CAClB"}

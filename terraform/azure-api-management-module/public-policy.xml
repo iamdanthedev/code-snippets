@@ -1,0 +1,19 @@
+<policies>
+    <inbound>
+        <base />
+    </inbound>
+    <backend>
+        <base />
+    </backend>
+    <outbound>
+        <base />
+        <set-header name="x-app-version" exists-action="override">
+            <value>
+                {{min-app-required-version}}
+            </value>
+        </set-header>
+    </outbound>
+    <on-error>
+        <base />
+    </on-error>
+</policies>

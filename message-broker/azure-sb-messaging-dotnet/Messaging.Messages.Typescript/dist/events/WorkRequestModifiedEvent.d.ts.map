@@ -1,0 +1,1 @@
+{"version":3,"file":"WorkRequestModifiedEvent.d.ts","sourceRoot":"","sources":["../../src/events/WorkRequestModifiedEvent.ts"],"names":[],"mappings":"AAAA;;;GAGG;AAEH,OAAO,EAAE,iBAAiB,EAAE,MAAM,qBAAqB,CAAC;AAExD,qBAAa,wBAAwB;IACnC,aAAa,EAAE,MAAM,CAAC;IACtB,MAAM,EAAE,iBAAiB,CAAC;IAC1B,KAAK,EAAE,OAAO,CAAC;IACf,SAAS,EAAE,OAAO,CAAC;CACpB"}

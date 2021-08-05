@@ -1,0 +1,40 @@
+parameters:
+  connStr: ''
+  sourceDbName: ''
+  targetDbName: ''
+
+jobs:
+  - job: install_mongo_utils
+    displayName: Install Mongo tools and clone the db
+    pool:
+      vmImage: 'ubuntu-18.04'
+    steps:
+      - script: cat /etc/resolv.conf
+      - script: |
+          sudo sed -i '/nameserver/d' /etc/resolv.conf
+          echo 'nameserver 8.8.8.8' | sudo tee -a /etc/resolv.conf
+        displayName: Update dns
+
+      - script: cat /etc/resolv.conf
+
+      - script: |
+          wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
+          echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
+          sudo apt-get update
+          sudo apt-get install -y mongodb-org-tools
+        displayName: Install mongo tools
+
+      - script: mongo "${{ parameters.connStr }}/${{ parameters.targetDbName }}" --eval "db.dropDatabase()"
+        displayName: Drop target DB
+
+      - script: cat /etc/resolv.conf
+
+      - script: mongodump -v --uri ${{ parameters.connStr }}/${{ parameters.sourceDbName }} --ssl --tlsInsecure --excludeCollection "audit_log" --out ./tmp
+        displayName: Dump source DB
+
+      - script: cat /etc/resolv.conf
+
+      - script: mongorestore --uri=${{ parameters.connStr }}/${{ parameters.targetDbName }} --nsFrom='${{ parameters.sourceDbName }}.*' --nsTo='${{ parameters.targetDbName }}.*' tmp/${{ parameters.sourceDbName }}
+        displayName: Restore the dump to target DB
+
+

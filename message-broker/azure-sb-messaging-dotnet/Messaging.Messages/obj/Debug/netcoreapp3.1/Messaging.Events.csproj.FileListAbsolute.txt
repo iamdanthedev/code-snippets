@@ -1,0 +1,12 @@
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Events/obj/Debug/netcoreapp3.1/Messaging.Events.csprojAssemblyReference.cache
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Events/obj/Debug/netcoreapp3.1/Messaging.Events.AssemblyInfoInputs.cache
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Events/obj/Debug/netcoreapp3.1/Messaging.Events.AssemblyInfo.cs
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Events/obj/Debug/netcoreapp3.1/Messaging.Events.csproj.CoreCompileInputs.cache
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Events/bin/Debug/netcoreapp3.1/Messaging.Events.deps.json
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Events/bin/Debug/netcoreapp3.1/Messaging.Events.dll
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Events/bin/Debug/netcoreapp3.1/Messaging.Events.pdb
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Events/bin/Debug/netcoreapp3.1/Messaging.dll
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Events/bin/Debug/netcoreapp3.1/Messaging.pdb
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Events/obj/Debug/netcoreapp3.1/Messaging.Events.csproj.CopyComplete
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Events/obj/Debug/netcoreapp3.1/Messaging.Events.dll
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Events/obj/Debug/netcoreapp3.1/Messaging.Events.pdb

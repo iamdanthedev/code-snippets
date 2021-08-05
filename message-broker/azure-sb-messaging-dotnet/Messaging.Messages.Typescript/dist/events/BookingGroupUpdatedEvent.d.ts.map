@@ -1,0 +1,1 @@
+{"version":3,"file":"BookingGroupUpdatedEvent.d.ts","sourceRoot":"","sources":["../../src/events/BookingGroupUpdatedEvent.ts"],"names":[],"mappings":"AAAA;;;GAGG;AAEH,qBAAa,wBAAwB;IACnC,cAAc,EAAE,MAAM,CAAC;IACvB,YAAY,EAAE,MAAM,CAAC;IACrB,MAAM,EAAE,MAAM,CAAC;IACf,aAAa,EAAE,MAAM,CAAC;IACtB,mBAAmB,EAAE,OAAO,CAAC;IAC7B,iBAAiB,EAAE,OAAO,CAAC;CAC5B"}

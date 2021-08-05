@@ -1,0 +1,1 @@
+{"version":3,"file":"UserSentEmailToConsultantEvent.d.ts","sourceRoot":"","sources":["../../src/events/UserSentEmailToConsultantEvent.ts"],"names":[],"mappings":"AAAA;;;GAGG;AAEH,qBAAa,8BAA8B;IACzC,OAAO,EAAE,MAAM,CAAC;IAChB,IAAI,EAAE,MAAM,CAAC;IACb,YAAY,EAAE,MAAM,CAAC;IACrB,MAAM,EAAE,MAAM,CAAC;CAChB"}

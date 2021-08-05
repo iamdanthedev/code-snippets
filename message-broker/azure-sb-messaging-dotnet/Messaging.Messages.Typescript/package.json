@@ -1,0 +1,21 @@
+{
+  "name": "@bonliva/message-bus",
+  "version": "1.0.0-a20201214160650",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "prettier": "prettier -w src/**/*.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^3.7.2"
+  },
+  "devDependencies": {
+    "lodash": "^4.17.20",
+    "prettier": "^2.2.1"
+  }
+}

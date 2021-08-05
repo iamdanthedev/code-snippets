@@ -1,0 +1,35 @@
+enum SMSDeliveryStatus {
+  Error
+  Pending
+  Delivered
+  Expired
+  Rejected
+  Unknown
+}
+
+type SMSMessage {
+  _id: ObjectID!
+  SentByRef: UserRef!
+  SentOn: Date!
+
+  From: String!
+  To: String!
+  Message: String!
+
+  Status: SMSDeliveryStatus!
+  StatusUpdatedOn: Date
+  IsStatusFinal: Boolean!
+  IsOk: Boolean!
+  IsFailed: Boolean!
+
+  SentBy: User
+}
+
+extend type Query {
+  smsMessageById(id: ObjectID!, refetchStatus: Boolean): SMSMessage
+}
+
+
+extend type Subscription {
+  smsMessageUpdated(id: ObjectID!): SMSMessage!
+}

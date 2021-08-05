@@ -1,0 +1,144 @@
+parameters:
+  containerRegistry: ''
+  dockerRegistrySC: ''
+  dockerTag: ''
+  dockerfilePath: ''
+  crmImageRepository: ''
+  consultantMicroserviceImageRepository: ''
+  workrequestMicroserviceImageRepository: ''
+  customerServiceImageRepository: ''
+  jobSchedulerImageRepository: ''
+
+jobs:
+  - job: build_deploy
+    displayName: Build docker image and deploy
+    pool:
+      vmImage: $(vmImageName)
+    variables:
+      latestContainer: ${{ parameters.containerRegistry }}/${{ parameters.crmImageRepository }}:latest
+
+    steps:
+      - task: DockerInstaller@0
+        displayName: Install docker
+        inputs:
+          dockerVersion: '17.09.0-ce'
+
+      - task: Docker@2
+        displayName: Login to ACR
+        inputs:
+          command: login
+          containerRegistry: ${{ parameters.dockerRegistrySC }}
+
+      - script: 'docker pull $(latestContainer)'
+        displayName: Pull latest container
+        continueOnError: true
+
+      - task: Docker@2
+        displayName: Build a CRM image
+        inputs:
+          command: build
+          dockerfile: ${{ parameters.dockerfilePath }}
+          containerRegistry: ${{ parameters.dockerRegistrySC }}
+          repository: ${{ parameters.crmImageRepository }}
+          tags: |
+            ${{ parameters.dockerTag }}
+            latest
+          arguments: '--target crm --build-arg CRM_APP_REVISION=$(tag) --cache-from $(latestContainer)'
+
+      - task: Docker@2
+        displayName: Build a WR microservice image
+        inputs:
+          command: build
+          dockerfile: ${{ parameters.dockerfilePath }}
+          containerRegistry: ${{ parameters.dockerRegistrySC }}
+          repository: ${{ parameters.workrequestMicroserviceImageRepository }}
+          tags: |
+            ${{ parameters.dockerTag }}
+            latest
+          arguments: '--target workrequest-microservice --build-arg CRM_APP_REVISION=$(tag) --cache-from $(latestContainer)'
+
+      - task: Docker@2
+        displayName: Build customer service image
+        inputs:
+          command: build
+          dockerfile: ${{ parameters.dockerfilePath }}
+          containerRegistry: ${{ parameters.dockerRegistrySC }}
+          repository: ${{ parameters.customerServiceImageRepository }}
+          tags: |
+            ${{ parameters.dockerTag }}
+            latest
+          arguments: '--target customer-service --build-arg CRM_APP_REVISION=$(tag) --cache-from $(latestContainer)'
+
+      - task: Docker@2
+        displayName: Build a consultant microservice image
+        inputs:
+          command: build
+          dockerfile: ${{ parameters.dockerfilePath }}
+          containerRegistry: ${{ parameters.dockerRegistrySC }}
+          repository: ${{ parameters.consultantMicroserviceImageRepository }}
+          tags: |
+            ${{ parameters.dockerTag }}
+            latest
+          arguments: '--target consultant-microservice --build-arg CRM_APP_REVISION=$(tag) --cache-from $(latestContainer)'
+
+      - task: Docker@2
+        displayName: Build job scheduler image
+        inputs:
+          command: build
+          dockerfile: ${{ parameters.dockerfilePath }}
+          containerRegistry: ${{ parameters.dockerRegistrySC }}
+          repository: ${{ parameters.jobSchedulerImageRepository }}
+          tags: |
+            ${{ parameters.dockerTag }}
+            latest
+          arguments: '--target job-scheduler --build-arg CRM_APP_REVISION=$(tag) --cache-from $(latestContainer)'
+
+      - task: Docker@2
+        displayName: Push the CRM image to container registry
+        inputs:
+          command: push
+          containerRegistry: ${{ parameters.dockerREgistrySC }}
+          repository: ${{ parameters.crmImageRepository }}
+          tags: |
+            ${{ parameters.dockerTag }}
+            latest
+
+      - task: Docker@2
+        displayName: Push the WR microservice image to container registry
+        inputs:
+          command: push
+          containerRegistry: ${{ parameters.dockerREgistrySC }}
+          repository: ${{ parameters.workrequestMicroserviceImageRepository }}
+          tags: |
+            ${{ parameters.dockerTag }}
+            latest
+
+      - task: Docker@2
+        displayName: Push consultant microservice image to container registry
+        inputs:
+          command: push
+          containerRegistry: ${{ parameters.dockerREgistrySC }}
+          repository: ${{ parameters.consultantMicroserviceImageRepository }}
+          tags: |
+            ${{ parameters.dockerTag }}
+            latest
+
+      - task: Docker@2
+        displayName: Push customer service image to container registry
+        inputs:
+          command: push
+          containerRegistry: ${{ parameters.dockerREgistrySC }}
+          repository: ${{ parameters.customerServiceImageRepository }}
+          tags: |
+            ${{ parameters.dockerTag }}
+            latest
+
+      - task: Docker@2
+        displayName: Push job scheduler image to container registry
+        inputs:
+          command: push
+          containerRegistry: ${{ parameters.dockerREgistrySC }}
+          repository: ${{ parameters.jobSchedulerImageRepository }}
+          tags: |
+            ${{ parameters.dockerTag }}
+            latest

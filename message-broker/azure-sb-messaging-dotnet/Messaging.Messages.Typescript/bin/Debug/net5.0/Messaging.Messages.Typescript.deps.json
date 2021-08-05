@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Messaging.Messages.Typescript/1.0.0": {
+        "runtime": {
+          "Messaging.Messages.Typescript.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Messaging.Messages.Typescript/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

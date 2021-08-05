@@ -1,0 +1,117 @@
+fragment WorkRequestProfile on WorkRequest {
+  ...WorkRequestInfo
+  _id
+  AreaOfExpertise
+  Bookings {
+    ...WorkRequestBookings_Booking
+  }
+  CustomerContracts {
+    contractNumber
+    contractStart
+    contractEnd
+  }
+  CustomerNumber
+  ResponsiblePerson {
+    Name
+    PersonId
+  }
+  DepartmentsRefs {
+    Id
+    Name
+    Type
+  }
+  Description
+  Documents {
+    ...DocumentList_Item
+  }
+  Duration {
+    _id
+    BusyRatio
+    Comment
+    DurationType
+    From
+    To
+    Vacancies
+  }
+  Hospital {
+    _id
+    AOESettings {
+      AreaOfExpertise
+      ResponsiblePerson {
+        Name
+        PersonId
+      }
+    }
+    Address {
+      City
+    }
+    AvatarPic
+    Description
+    Name
+    Parents {
+      Id
+      Name
+      Type
+    }
+    RegionRef {
+      Id
+      Name
+      Type
+    }
+    Type
+  }
+  HospitalRef {
+    Id
+    Name
+    Type
+  }
+  HourlyRate
+  Specializations
+  LastApplicationDate
+  IsPublished
+  Schedule
+  Qualifications
+  WorkRequestNumber
+  WorkRequestTags
+  WorkRequestWeeksParams {
+    isDisabled
+    openVacancies
+    week
+    year
+  }
+  WorkRequestDurationType
+  DurationCustomText
+}
+
+query WorkRequestProfile_Get($id: ObjectID!) {
+  workRequestById(id: $id) {
+    ...WorkRequestProfile
+  }
+}
+
+mutation changeVacanciesInWorkrequest($id: ObjectID!, $input: [ChangeVacanciesInWeekInput!]!) {
+  changeVacanciesInWorkRequest(id: $id, input: $input) {
+    workRequest {
+      ...WorkRequestProfile
+    }
+  }
+}
+
+mutation disableVacanciesInWorkRequest($id: ObjectID!, $input: [WeekYearInput!]!) {
+  disableVacanciesInWorkRequest(id: $id, weeks: $input) {
+    workRequest {
+      ...WorkRequestProfile
+    }
+  }
+}
+
+mutation WorkRequestProfile_Delete_Document($id: ObjectID!, $fileId: ObjectID!) {
+  deleteWorkRequestDocument(workRequestId: $id, fileId: $fileId) {
+    workRequest {
+      _id
+    }
+    validationErrors{
+      Message
+    }
+  }
+}

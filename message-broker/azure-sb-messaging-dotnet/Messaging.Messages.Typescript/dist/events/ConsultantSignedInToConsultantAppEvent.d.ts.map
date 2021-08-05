@@ -1,0 +1,1 @@
+{"version":3,"file":"ConsultantSignedInToConsultantAppEvent.d.ts","sourceRoot":"","sources":["../../src/events/ConsultantSignedInToConsultantAppEvent.ts"],"names":[],"mappings":"AAAA;;;GAGG;AAEH,qBAAa,sCAAsC;IACjD,YAAY,EAAE,MAAM,CAAC;IACrB,cAAc,EAAE,MAAM,CAAC;IACvB,SAAS,EAAE,OAAO,CAAC;CACpB"}

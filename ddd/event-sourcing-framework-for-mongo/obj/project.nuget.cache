@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "YvCwcyVcLsA0ICcmHx12UBbruOIIbG6i11fFZmGC/3ZeSEZQciNgDE0wV3AXEIyRXQEyJ91IFbrboFtztPBxog==",
+  "success": true,
+  "projectFilePath": "/Users/dandan/Projects/bonliva/timereport-service/TimereportService/src/Framework/Framework.csproj",
+  "expectedPackageFiles": [
+    "/Users/dandan/.nuget/packages/asyncenumerator/4.0.2/asyncenumerator.4.0.2.nupkg.sha512",
+    "/Users/dandan/.nuget/packages/mongodb.bson/2.11.6/mongodb.bson.2.11.6.nupkg.sha512"
+  ],
+  "logs": []
+}

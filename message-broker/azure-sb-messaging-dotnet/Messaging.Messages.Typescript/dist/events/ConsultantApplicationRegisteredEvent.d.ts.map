@@ -1,0 +1,1 @@
+{"version":3,"file":"ConsultantApplicationRegisteredEvent.d.ts","sourceRoot":"","sources":["../../src/events/ConsultantApplicationRegisteredEvent.ts"],"names":[],"mappings":"AAAA;;;GAGG;AAEH,qBAAa,oCAAoC;IAC/C,YAAY,EAAE,MAAM,CAAC;IACrB,eAAe,EAAE,MAAM,CAAC;IACxB,MAAM,EAAE,MAAM,CAAC;CAChB"}

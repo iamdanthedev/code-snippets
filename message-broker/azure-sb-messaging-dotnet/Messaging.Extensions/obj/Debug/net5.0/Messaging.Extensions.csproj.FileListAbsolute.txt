@@ -1,0 +1,17 @@
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Extensions/bin/Debug/net5.0/Messaging.Extensions.deps.json
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Extensions/bin/Debug/net5.0/Messaging.Extensions.dll
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Extensions/bin/Debug/net5.0/ref/Messaging.Extensions.dll
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Extensions/bin/Debug/net5.0/Messaging.Extensions.pdb
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Extensions/bin/Debug/net5.0/Messaging.dll
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Extensions/bin/Debug/net5.0/Messaging.Messages.dll
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Extensions/bin/Debug/net5.0/Messaging.Messages.pdb
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Extensions/bin/Debug/net5.0/Messaging.pdb
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Extensions/obj/Debug/net5.0/Messaging.Extensions.csprojAssemblyReference.cache
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Extensions/obj/Debug/net5.0/Messaging.Extensions.GeneratedMSBuildEditorConfig.editorconfig
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Extensions/obj/Debug/net5.0/Messaging.Extensions.AssemblyInfoInputs.cache
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Extensions/obj/Debug/net5.0/Messaging.Extensions.AssemblyInfo.cs
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Extensions/obj/Debug/net5.0/Messaging.Extensions.csproj.CoreCompileInputs.cache
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Extensions/obj/Debug/net5.0/Messaging.Extensions.csproj.CopyComplete
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Extensions/obj/Debug/net5.0/Messaging.Extensions.dll
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Extensions/obj/Debug/net5.0/ref/Messaging.Extensions.dll
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Extensions/obj/Debug/net5.0/Messaging.Extensions.pdb

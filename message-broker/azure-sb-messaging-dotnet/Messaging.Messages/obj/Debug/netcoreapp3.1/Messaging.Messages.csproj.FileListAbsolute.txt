@@ -1,0 +1,12 @@
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Messages/bin/Debug/netcoreapp3.1/Messaging.Messages.deps.json
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Messages/bin/Debug/netcoreapp3.1/Messaging.Messages.dll
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Messages/bin/Debug/netcoreapp3.1/Messaging.Messages.pdb
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Messages/bin/Debug/netcoreapp3.1/Messaging.dll
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Messages/bin/Debug/netcoreapp3.1/Messaging.pdb
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Messages/obj/Debug/netcoreapp3.1/Messaging.Messages.csprojAssemblyReference.cache
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Messages/obj/Debug/netcoreapp3.1/Messaging.Messages.AssemblyInfoInputs.cache
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Messages/obj/Debug/netcoreapp3.1/Messaging.Messages.AssemblyInfo.cs
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Messages/obj/Debug/netcoreapp3.1/Messaging.Messages.csproj.CoreCompileInputs.cache
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Messages/obj/Debug/netcoreapp3.1/Messaging.Messages.csproj.CopyComplete
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Messages/obj/Debug/netcoreapp3.1/Messaging.Messages.dll
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Messages/obj/Debug/netcoreapp3.1/Messaging.Messages.pdb

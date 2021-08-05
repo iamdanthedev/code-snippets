@@ -1,0 +1,1 @@
+{"version":3,"file":"BookingCostsClearedEvent.d.ts","sourceRoot":"","sources":["../../src/events/BookingCostsClearedEvent.ts"],"names":[],"mappings":"AAAA;;;GAGG;AAEH,qBAAa,wBAAwB;IACnC,SAAS,EAAE,MAAM,CAAC;IAClB,aAAa,EAAE,MAAM,CAAC;IACtB,YAAY,EAAE,MAAM,CAAC;IACrB,cAAc,EAAE,MAAM,CAAC;CACxB"}

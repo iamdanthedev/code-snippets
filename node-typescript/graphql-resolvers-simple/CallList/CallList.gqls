@@ -1,0 +1,41 @@
+enum CallListType {
+  CallList,
+  ContactList
+}
+
+type CallList {
+  _id: ObjectID!
+  Audit: Audit!
+  Deleted: Boolean!
+  Name: String!
+  Type: NodeType!
+  Nodes: [NodeRef!]!
+  Owner: UserRef
+  Members: [UserRef!]!
+}
+
+input CallListCreateInput {
+  _id: ObjectID
+  Name: String!
+  Nodes: [NodeRefFullInput!]!
+  Type : NodeType!
+}
+
+# this type can be slit into multiple types per operation
+type CallListOpResult {
+  callList: CallList
+}
+
+extend type Query {
+  callListById(id: ObjectID!): CallListOpResult!
+}
+
+extend type Mutation {
+  createCallList(type: CallListType!, data: CallListCreateInput!): CallListOpResult!
+
+  addToCallList(callListId: ObjectID!, node: NodeRefFullInput!): CallListOpResult!
+  removeFromCallList(callListId: ObjectID!, nodeId: ObjectID!): CallListOpResult!
+  renameCallList(callListId: ObjectID!, newName: String!): CallListOpResult!
+  leaveCallList(callListId: ObjectID!): CallListOpResult!
+  setCallListMembers(callListId: ObjectID!, userIds: [ObjectID!]): CallListOpResult!
+}

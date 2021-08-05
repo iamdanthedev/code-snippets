@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Bonliva.Messaging.DependencyInjection</id>
+    <version>1.0.0-a20201214142428</version>
+    <authors>Bonliva AB</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>https://bonliva.se/</projectUrl>
+    <description>Package Description</description>
+    <copyright>Bonliva AB</copyright>
+    <dependencies>
+      <group targetFramework=".NETCoreApp3.1">
+        <dependency id="Bonliva.Messaging.Messages" version="1.0.0-a20201214142428" exclude="Build,Analyzers" />
+        <dependency id="Messaging" version="1.0.0-a20201214142428" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Extensions/bin/Debug/netcoreapp3.1/Messaging.Extensions.dll" target="lib/netcoreapp3.1/Messaging.Extensions.dll" />
+  </files>
+</package>

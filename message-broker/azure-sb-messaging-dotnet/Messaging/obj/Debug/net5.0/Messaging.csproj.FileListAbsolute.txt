@@ -1,0 +1,12 @@
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging/bin/Debug/net5.0/Messaging.deps.json
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging/bin/Debug/net5.0/Messaging.dll
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging/bin/Debug/net5.0/ref/Messaging.dll
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging/bin/Debug/net5.0/Messaging.pdb
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging/obj/Debug/net5.0/Messaging.csprojAssemblyReference.cache
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging/obj/Debug/net5.0/Messaging.GeneratedMSBuildEditorConfig.editorconfig
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging/obj/Debug/net5.0/Messaging.AssemblyInfoInputs.cache
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging/obj/Debug/net5.0/Messaging.AssemblyInfo.cs
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging/obj/Debug/net5.0/Messaging.csproj.CoreCompileInputs.cache
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging/obj/Debug/net5.0/Messaging.dll
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging/obj/Debug/net5.0/ref/Messaging.dll
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging/obj/Debug/net5.0/Messaging.pdb

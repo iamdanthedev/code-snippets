@@ -1,0 +1,174 @@
+<policies>
+    <inbound>
+        <base />
+        <choose>
+            <when condition="@{
+                Jwt jwt;
+                string tokenHeader = context.Request.Headers.GetValueOrDefault(&#34;Authorization&#34;, &#34;&#34;);
+
+      if (tokenHeader?.Length > 0)
+      {
+      tokenHeader = tokenHeader.Replace(&#34;Bearer &#34;, &#34;&#34;);
+      if (tokenHeader.TryParseJwt(out jwt))
+      {
+
+      if (jwt.Audiences != null &#38;&#38; jwt.Audiences.FirstOrDefault() == &#34;{{crm-audience}}&#34;) {
+      return true;
+      }
+      }
+      }
+
+      return false;
+      }">
+                <validate-jwt header-name="Authorization" failed-validation-httpcode="401" failed-validation-error-message="Unauthorized. Access token is missing or invalid.">
+                    <openid-config url="{{openid-config-url}}" />
+                    <audiences>
+                        <audience>{{crm-audience}}</audience>
+                    </audiences>
+                </validate-jwt>
+            </when>
+            <otherwise>
+                <validate-jwt header-name="Authorization" failed-validation-httpcode="401" failed-validation-error-message="Unauthorized. Access token is missing or invalid." require-scheme="Bearer">
+                    <issuer-signing-keys>
+                        <key>{{mobile-app-jwt-signing-key}}</key>
+                    </issuer-signing-keys>
+                    <audiences>
+                        <audience>{{mobile-app-jwt-audience}}</audience>
+                    </audiences>
+                    <issuers>
+                        <issuer>{{mobile-app-jwt-issuer}}</issuer>
+                    </issuers>
+                </validate-jwt>
+            </otherwise>
+        </choose>
+        <set-header name="x-sid" exists-action="override">
+            <value>@{
+                Jwt jwt;
+                string tokenHeader = context.Request.Headers.GetValueOrDefault("Authorization", "");
+
+                if (tokenHeader?.Length > 0)
+                {
+                    tokenHeader = tokenHeader.Replace("Bearer ", "");
+                    if (tokenHeader.TryParseJwt(out jwt))
+                    {
+                        foreach(var claim in jwt.Claims)
+                        {
+                            if (jwt.Audiences != null &#38;&#38; jwt.Audiences.FirstOrDefault() == "{{crm-audience}}")
+                            {
+                                if(claim.Key == "crm_id")
+                                {
+                                    return string.Join("", claim.Value);
+                                }
+                            }
+                            else 
+                            {
+                                if(claim.Key == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/sid")
+                                {
+                                    return string.Join("", claim.Value);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                return "";
+                }</value>
+        </set-header>
+        <set-header name="x-unique-name" exists-action="override">
+            <value>@{
+                Jwt jwt;
+                string tokenHeader = context.Request.Headers.GetValueOrDefault("Authorization", "");
+
+                if (tokenHeader?.Length > 0)
+                {
+                    tokenHeader = tokenHeader.Replace("Bearer ", "");
+                    if (tokenHeader.TryParseJwt(out jwt))
+                    {
+                        foreach(var claim in jwt.Claims)
+                        {
+                            if (jwt.Audiences != null &#38;&#38; jwt.Audiences.FirstOrDefault() == "{{crm-audience}}") {
+                                if(claim.Key == "name") {
+                                return System.Net.WebUtility.HtmlEncode(string.Join("", claim.Value));
+                                }
+                            } else {
+                                if(claim.Key == "unique_name") {
+                                return System.Net.WebUtility.HtmlEncode(string.Join("", claim.Value));
+                                }
+                            }
+                        }
+                    }
+                }
+
+                return "";
+                }</value>
+        </set-header>
+        <set-header name="x-role" exists-action="override">
+            <value>@{
+                Jwt jwt;
+                string tokenHeader = context.Request.Headers.GetValueOrDefault("Authorization", "");
+
+                if (tokenHeader?.Length > 0)
+                {
+                tokenHeader = tokenHeader.Replace("Bearer ", "");
+                if (tokenHeader.TryParseJwt(out jwt))
+                {
+                foreach(var claim in jwt.Claims)
+                {
+                if (jwt.Audiences != null &#38;&#38; jwt.Audiences.FirstOrDefault() == "{{crm-audience}}") {
+                return "InternalUser";
+                } else {
+                if(claim.Key == "role") {
+                return string.Join("", claim.Value);
+                }
+                }
+                }
+                }
+                }
+
+                return "";
+                }</value>
+        </set-header>
+        <set-header name="x-unique-email" exists-action="override">
+            <value>@{
+                Jwt jwt;
+                string tokenHeader = context.Request.Headers.GetValueOrDefault("Authorization", "");
+
+                if (tokenHeader?.Length > 0)
+                {
+                tokenHeader = tokenHeader.Replace("Bearer ", "");
+                if (tokenHeader.TryParseJwt(out jwt))
+                {
+                foreach(var claim in jwt.Claims)
+                {
+                if (jwt.Audiences != null &#38;&#38; jwt.Audiences.FirstOrDefault() == "{{crm-audience}}") {
+                if(claim.Key == "unique_name") {
+                return string.Join("", claim.Value);
+                }
+                } else {
+                if(claim.Key == "email") {
+                return string.Join("", claim.Value);
+                }
+                }
+                }
+                }
+                }
+
+                return "";
+                }</value>
+        </set-header>
+    </inbound>
+    <backend>
+        <base />
+    </backend>
+    <outbound>
+        <base />
+        <set-header name="x-app-version" exists-action="override">
+            <value>
+                {{min-app-required-version}}
+            </value>
+        </set-header>
+    </outbound>
+    <on-error>
+        <base />
+    </on-error>
+</policies>

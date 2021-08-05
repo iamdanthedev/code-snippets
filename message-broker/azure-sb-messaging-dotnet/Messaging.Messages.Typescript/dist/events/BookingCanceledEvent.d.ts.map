@@ -1,0 +1,1 @@
+{"version":3,"file":"BookingCanceledEvent.d.ts","sourceRoot":"","sources":["../../src/events/BookingCanceledEvent.ts"],"names":[],"mappings":"AAAA;;;GAGG;AAEH,qBAAa,oBAAoB;IAC/B,SAAS,EAAE,MAAM,CAAC;IAClB,MAAM,EAAE,MAAM,CAAC;CAChB"}

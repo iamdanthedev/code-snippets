@@ -1,0 +1,1 @@
+{"version":3,"file":"TimereportSentToCustomerEvent.d.ts","sourceRoot":"","sources":["../../src/events/TimereportSentToCustomerEvent.ts"],"names":[],"mappings":"AAAA;;;GAGG;AAEH,qBAAa,6BAA6B;IACxC,YAAY,EAAE,MAAM,CAAC;IACrB,YAAY,EAAE,MAAM,CAAC;IACrB,cAAc,EAAE,MAAM,CAAC;IACvB,cAAc,EAAE,MAAM,EAAE,CAAC;CAC1B"}

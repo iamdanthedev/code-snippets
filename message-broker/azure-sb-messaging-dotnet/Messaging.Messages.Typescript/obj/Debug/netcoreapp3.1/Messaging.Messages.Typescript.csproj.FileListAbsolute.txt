@@ -1,0 +1,9 @@
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Messages.Typescript/bin/Debug/netcoreapp3.1/Messaging.Messages.Typescript.deps.json
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Messages.Typescript/bin/Debug/netcoreapp3.1/Messaging.Messages.Typescript.dll
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Messages.Typescript/bin/Debug/netcoreapp3.1/Messaging.Messages.Typescript.pdb
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Messages.Typescript/obj/Debug/netcoreapp3.1/Messaging.Messages.Typescript.csprojAssemblyReference.cache
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Messages.Typescript/obj/Debug/netcoreapp3.1/Messaging.Messages.Typescript.AssemblyInfoInputs.cache
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Messages.Typescript/obj/Debug/netcoreapp3.1/Messaging.Messages.Typescript.AssemblyInfo.cs
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Messages.Typescript/obj/Debug/netcoreapp3.1/Messaging.Messages.Typescript.csproj.CoreCompileInputs.cache
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Messages.Typescript/obj/Debug/netcoreapp3.1/Messaging.Messages.Typescript.dll
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Messages.Typescript/obj/Debug/netcoreapp3.1/Messaging.Messages.Typescript.pdb

@@ -1,0 +1,106 @@
+trigger:
+  - master
+  - staging
+  - dev
+
+variables:
+  # Container registry service connection established during pipeline creation
+  azureSubscription: 'Bonliva(82ee973b-9919-47fd-b043-e685b0e47cb6)'
+
+  dockerRegistryServiceConnection: 'bonlivacr-docker-service-connection'
+  crmImageRepository: 'crm_$(Build.SourceBranchName)'
+  consultantMicroserviceImageRepository: 'consultant_microservice_$(Build.SourceBranchName)'
+  workrequestMicroserviceImageRepository: 'workrequest_microservice_$(Build.SourceBranchName)'
+  customerServiceImageRepository: 'customer_service_$(Build.SourceBranchName)'
+  jobSchedulerImageRepository: 'job_scheduler_$(Build.SourceBranchName)'
+  containerRegistry: 'bonlivacr.azurecr.io'
+  dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
+  tag: '$(Build.BuildId)'
+
+  # staging deployments
+
+  stagingWebAppName: 'bonliva-crm-staging'
+
+  isMaster: $[eq(variables['Build.SourceBranch'], 'refs/heads/master')]
+  isStaging: $[eq(variables['Build.SourceBranch'], 'refs/heads/staging')]
+  isDev: $[eq(variables['Build.SourceBranch'], 'refs/heads/dev')]
+
+  stagingMongoConnection: 'mongodb+srv://staging:VAD573JK3S6Q1n5s@cluster0-2s2my.azure.mongodb.net'
+  stagingMongoDatabase: 'BonlivaStagingCrmDb'
+  prodMongoDatabase: 'BonlivaProductionCrmDbCurrent'
+
+  # Agent VM image name
+  vmImageName: 'ubuntu-latest'
+  crmDockerContainer: '$(containerRegistry)/$(crmImageRepository):$(tag)'
+
+stages:
+  - stage: Dockerize
+    displayName: Build and publish a container
+    jobs:
+      - template: .azure/container-build-upload.template.yml
+        parameters:
+          containerRegistry: '$(containerRegistry)'
+          dockerRegistrySC: '$(dockerRegistryServiceConnection)'
+          dockerTag: '$(tag)'
+          dockerfilePath: '$(dockerfilePath)'
+          crmImageRepository: '$(crmImageRepository)'
+          consultantMicroserviceImageRepository: '$(consultantMicroserviceImageRepository)'
+          workrequestMicroserviceImageRepository: '$(workrequestMicroserviceImageRepository)'
+          customerServiceImageRepository: '$(customerServiceImageRepository)'
+          jobSchedulerImageRepository: '$(jobSchedulerImageRepository)'
+
+  ########################################################################
+  #                         S T A G I N G                                #
+  ########################################################################
+
+  - stage: StopStaging
+    displayName: Stop staging env
+    condition: and(succeeded(), eq(variables.isStaging, true), contains(variables['Build.SourceVersionMessage'], '[clone]'))
+    dependsOn: Dockerize
+    jobs:
+      - job: StopStaging
+        displayName: Stop staging app
+        steps:
+          - task: AzureAppServiceManage@0
+            displayName: Stop staging crm app
+            inputs:
+              azureSubscription: '$(azureSubscription)'
+              action: 'Stop Azure App Service'
+              webAppName: '$(stagingWebAppName)'
+
+  - stage: CloneStagingDb
+    displayName: Clone production db to staging
+    dependsOn: StopStaging
+    condition: and(succeeded(), eq(variables.isStaging, true), contains(variables['Build.SourceVersionMessage'], '[clone]'))
+    jobs:
+      - template: .azure/clone-mongo-db.template.yml
+        parameters:
+          connStr: '$(stagingMongoConnection)'
+          sourceDbName: '$(prodMongoDatabase)'
+          targetDbName: '$(stagingMongoDatabase)'
+
+  - stage: MigrateStaging
+    displayName: Run db migrations in staging
+    condition: and(succeeded(), eq(variables.isStaging, true))
+    pool:
+     vmImage: 'ubuntu-latest'
+    jobs:
+     - template: .azure/run-migrations.template.yml
+       parameters:
+         crmDockerContainer: '$(crmDockerContainer)'
+         mongoConnectionString: '$(stagingMongoConnection)/$(stagingMongoDatabase)'
+
+  - stage: DeployStaging
+    displayName: Deploy to the staging server
+    dependsOn: Dockerize
+    condition: and(succeeded(), eq(variables.isStaging, true))
+    jobs:
+      - job: StartStaging
+        displayName: Start staging app
+        steps:
+          - task: AzureAppServiceManage@0
+            displayName: Start staging crm app
+            inputs:
+              azureSubscription: '$(azureSubscription)'
+              action: 'Start Azure App Service'
+              webAppName: '$(stagingWebAppName)'

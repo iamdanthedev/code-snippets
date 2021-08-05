@@ -1,0 +1,12 @@
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Messages.Typescript/bin/Debug/net5.0/Messaging.Messages.Typescript.deps.json
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Messages.Typescript/bin/Debug/net5.0/Messaging.Messages.Typescript.dll
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Messages.Typescript/bin/Debug/net5.0/ref/Messaging.Messages.Typescript.dll
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Messages.Typescript/bin/Debug/net5.0/Messaging.Messages.Typescript.pdb
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Messages.Typescript/obj/Debug/net5.0/Messaging.Messages.Typescript.csprojAssemblyReference.cache
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Messages.Typescript/obj/Debug/net5.0/Messaging.Messages.Typescript.GeneratedMSBuildEditorConfig.editorconfig
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Messages.Typescript/obj/Debug/net5.0/Messaging.Messages.Typescript.AssemblyInfoInputs.cache
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Messages.Typescript/obj/Debug/net5.0/Messaging.Messages.Typescript.AssemblyInfo.cs
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Messages.Typescript/obj/Debug/net5.0/Messaging.Messages.Typescript.csproj.CoreCompileInputs.cache
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Messages.Typescript/obj/Debug/net5.0/Messaging.Messages.Typescript.dll
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Messages.Typescript/obj/Debug/net5.0/ref/Messaging.Messages.Typescript.dll
+/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging.Messages.Typescript/obj/Debug/net5.0/Messaging.Messages.Typescript.pdb

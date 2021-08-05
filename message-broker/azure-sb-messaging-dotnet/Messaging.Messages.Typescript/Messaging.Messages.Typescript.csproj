@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="../Messaging/Messaging.csproj">
+            <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+        </ProjectReference>
+
+        <ProjectReference Include="../Messaging.Messages/Messaging.Messages.csproj">
+            <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+        </ProjectReference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="dist" />
+    </ItemGroup>
+
+    <Target Name="Convert" AfterTargets="AfterBuild">
+        <Exec Command="dotnet typegen generate" WorkingDirectory="$(ProjectDir)" />
+        <Exec Command="npm install" />
+        <Exec Command="npm run build" />
+        <Exec Command="node fix-events.js" />
+        <Exec Command="npm run prettier" />
+    </Target>
+</Project>

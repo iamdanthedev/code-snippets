@@ -1,0 +1,56 @@
+trigger:
+  - dev
+  - staging
+  - master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  ${{ if eq(variables['Build.SourceBranchName'], 'master') }}:
+    stageName: production
+  ${{ if ne(variables['Build.SourceBranchName'], 'master') }}:
+    stageName: ${{ variables['Build.SourceBranchName'] }}
+
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+  dockerRegistrySC: 'bonlivacr-docker-timereport-service-connection'
+  dockerTag: '$(Build.BuildId)'
+  imageRepository: 'timereport_service_$(stageName)'
+  dockerNameSpace: 'bonlivacr'
+
+jobs:
+  - job: BuildDocker
+    displayName: Build docker image & push to repo
+    steps:
+      - task: DockerInstaller@0
+        inputs:
+          dockerVersion: '17.09.0-ce'
+
+      - task: Docker@2
+        displayName: Login to ACR
+        inputs:
+          command: login
+          containerRegistry: '$(dockerRegistrySC)'
+
+      - task: Docker@2
+        displayName: Build an image
+        inputs:
+          command: build
+          dockerfile: '**/Dockerfile'
+          containerRegistry: '$(dockerRegistrySC)'
+          repository: '$(imageRepository)'
+          tags: |
+            $(dockerTag)
+            latest
+
+      - task: Docker@2
+        displayName: Push the image to container registry
+        inputs:
+          command: push
+          containerRegistry: '$(dockerRegistrySC)'
+          repository: '$(imageRepository)'
+          tags: |
+            $(dockerTag)
+            latest

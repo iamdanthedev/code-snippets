@@ -1,0 +1,1 @@
+{"version":3,"file":"ConsultantEventCreatedEvent.d.ts","sourceRoot":"","sources":["../../src/events/ConsultantEventCreatedEvent.ts"],"names":[],"mappings":"AAAA;;;GAGG;AAEH,qBAAa,2BAA2B;IACtC,YAAY,EAAE,MAAM,CAAC;IACrB,MAAM,EAAE,MAAM,CAAC;IACf,OAAO,EAAE,MAAM,CAAC;CACjB"}

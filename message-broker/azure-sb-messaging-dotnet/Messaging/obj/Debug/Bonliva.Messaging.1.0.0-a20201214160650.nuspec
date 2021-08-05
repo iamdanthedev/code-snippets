@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Bonliva.Messaging</id>
+    <version>1.0.0-a20201214160650</version>
+    <authors>Bonliva AB</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>https://bonliva.se/</projectUrl>
+    <description>Package Description</description>
+    <copyright>Bonliva AB</copyright>
+    <dependencies>
+      <group targetFramework=".NETCoreApp3.1">
+        <dependency id="Microsoft.Azure.ServiceBus" version="5.1.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.DependencyInjection.Abstractions" version="5.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Hosting" version="5.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Logging.Abstractions" version="5.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="/Users/dandan/Projects/bonliva/message-bus/MessageBus/Messaging/bin/Debug/netcoreapp3.1/Messaging.dll" target="lib/netcoreapp3.1/Messaging.dll" />
+  </files>
+</package>

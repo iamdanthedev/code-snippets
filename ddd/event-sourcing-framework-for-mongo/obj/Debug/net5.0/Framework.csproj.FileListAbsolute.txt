@@ -1,0 +1,12 @@
+/Users/dandan/Projects/bonliva/timereport-service/TimereportService/src/Framework/bin/Debug/net5.0/Framework.deps.json
+/Users/dandan/Projects/bonliva/timereport-service/TimereportService/src/Framework/bin/Debug/net5.0/Framework.dll
+/Users/dandan/Projects/bonliva/timereport-service/TimereportService/src/Framework/bin/Debug/net5.0/ref/Framework.dll
+/Users/dandan/Projects/bonliva/timereport-service/TimereportService/src/Framework/bin/Debug/net5.0/Framework.pdb
+/Users/dandan/Projects/bonliva/timereport-service/TimereportService/src/Framework/obj/Debug/net5.0/Framework.csprojAssemblyReference.cache
+/Users/dandan/Projects/bonliva/timereport-service/TimereportService/src/Framework/obj/Debug/net5.0/Framework.GeneratedMSBuildEditorConfig.editorconfig
+/Users/dandan/Projects/bonliva/timereport-service/TimereportService/src/Framework/obj/Debug/net5.0/Framework.AssemblyInfoInputs.cache
+/Users/dandan/Projects/bonliva/timereport-service/TimereportService/src/Framework/obj/Debug/net5.0/Framework.AssemblyInfo.cs
+/Users/dandan/Projects/bonliva/timereport-service/TimereportService/src/Framework/obj/Debug/net5.0/Framework.csproj.CoreCompileInputs.cache
+/Users/dandan/Projects/bonliva/timereport-service/TimereportService/src/Framework/obj/Debug/net5.0/Framework.dll
+/Users/dandan/Projects/bonliva/timereport-service/TimereportService/src/Framework/obj/Debug/net5.0/ref/Framework.dll
+/Users/dandan/Projects/bonliva/timereport-service/TimereportService/src/Framework/obj/Debug/net5.0/Framework.pdb
